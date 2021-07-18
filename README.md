@@ -11,6 +11,8 @@ https://github.com/beyondtheoryio/Enumeration-Guide
 
 I liked the idea and made my own version out of it.
 
+(*Big parts are still copy-paste or merged from different sources I found*)
+(*I use this as a personal Cheat-Sheet. No responsability for scripts*)
 
 
 
