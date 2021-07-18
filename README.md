@@ -257,18 +257,16 @@ nmap --script smb-enum-*,smb-vuln-*,smb-ls.nse,smb-mbenum.nse,smb-os-discovery.n
 smbver.sh 10.11.1.111
 Msfconsole;use scanner/smb/smb_version
 ngrep -i -d tap0 's.?a.?m.?b.?a.*[[:digit:]]' 
-smbclient -L \\\\10.11.1.111
 
 # Get Shares
 smbmap -H  10.11.1.111 -R <sharename>
 echo exit | smbclient -L \\\\10.11.1.111
 smbclient \\\\10.11.1.111\\<share>
-smbclient -L //10.11.1.111 -N
 nmap --script smb-enum-shares -p139,445 -T4 -Pn 10.11.1.111
-smbclient -L \\\\10.11.1.111\\
+smbmap -H 10.10.10.30 -u Sandra -p Password1234! -d MEGACORP.LOCAL
+smbclient -L \\\\10.10.10.30 -U Sandra%Password1234!
 
 # Check null sessions
-smbmap -H 10.11.1.111
 rpcclient -U "" -N 10.11.1.111
 smbclient //10.11.1.111/IPC$ -N
 
@@ -293,8 +291,10 @@ smbclient \\\\10.11.1.111\\ipc$ -U john
 smbclient //10.11.1.111/ipc$ -U john  
 ```
 
+```
 rpcclient -U " " 10.11.1.111
 rpcclient -U " " -N 10.11.1.111
+```
 
 ```
 # Check vulns
@@ -343,11 +343,13 @@ smbmap.py -u username -p 'P@$$w0rd1234!' -d ABC -H 10.11.1.111 -x 'powershell -c
 \Policies\{REG}\MACHINE\Preferences\Groups\Groups.xml look for user&pass "gpp-decrypt "
 ```
 
+```
 smbtree 10.11.1.111
 
 nmblookup -A target
 
 ## Port 161/162 UDP - SNMP
+```
 
 ```
 nmap -vv -sV -sU -Pn -p 161,162 --script=snmp-netstat,snmp-processes 10.11.1.111
