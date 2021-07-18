@@ -5,8 +5,8 @@ A port of all ports Enumeration Guide.
 
 The original document can be found here:
 
-https://github.com/six2dez/OSCP-Human-Guide/blob/master/oscp_human_guide.md 
-or 
+https://github.com/six2dez/OSCP-Human-Guide/blob/master/oscp_human_guide.md <br>
+or <br>
 https://github.com/beyondtheoryio/Enumeration-Guide 
 
 I liked the idea and made my own version out of it.
