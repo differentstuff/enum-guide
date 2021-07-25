@@ -202,10 +202,10 @@ nmap -p69 --script=tftp-enum.nse 10.11.1.111
 
 ## HTTP - 80
 
-check: webpage
-check: burp
-check: dirbuster/gobuster
-check: ...
+check: webpage <br>
+check: burp <br>
+check: dirbuster/gobuster <br>
+check: ... <br>
 
 ```
 - 
