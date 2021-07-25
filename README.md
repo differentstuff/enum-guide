@@ -197,7 +197,7 @@ This is used for tftp-server.
 - Checks of FTP Port 21.
 
 ```
-nmap -p69 --script=tftp-enum.nse 10.11.1.111
+nmap -p 69 --script=tftp-enum.nse 10.11.1.111
 ```
 
 ## HTTP - 80
@@ -206,9 +206,11 @@ check: webpage <br>
 check: burp <br>
 check: dirbuster/gobuster <br>
 check: ... <br>
+dirb, dirsearch, gobuster, ffuf, feroxbuster <br>
 
 ```
-- 
+wpscan -u 10.10.10.239 --enumerate u
+wpscan -u URL --wordlist /Path/to/file.txt --username USER
 ```
 
 ## Kerberos - 88
