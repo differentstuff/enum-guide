@@ -199,6 +199,17 @@ This is used for tftp-server.
 nmap -p69 --script=tftp-enum.nse 10.11.1.111
 ```
 
+## Kerberos - 80
+
+check: webpage
+check: burp
+check: dirbuster/gobuster
+check: ...
+
+```
+- 
+```
+
 ## Kerberos - 88
 
 - MS14-068
