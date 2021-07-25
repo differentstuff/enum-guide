@@ -25,6 +25,7 @@ Table of Contents
       * [Port 22 - SSH](#port-22---ssh)
       * [Port 25 - Telnet](#port-25---telnet)
       * [Port 69 - UDP - TFTP](#port-69---udp---tftp)
+      * [Port 80 - HTTP](#HTTP---80)
       * [Kerberos - 88](#kerberos---88)
       * [Port 110 - Pop3](#port-110---pop3)
       * [Port 111 - Rpcbind](#port-111---rpcbind)
@@ -199,7 +200,7 @@ This is used for tftp-server.
 nmap -p69 --script=tftp-enum.nse 10.11.1.111
 ```
 
-## Kerberos - 80
+## HTTP - 80
 
 check: webpage
 check: burp
