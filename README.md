@@ -275,12 +275,17 @@ Msfconsole;use scanner/smb/smb_version
 ngrep -i -d tap0 's.?a.?m.?b.?a.*[[:digit:]]' 
 
 # Get Shares
-smbmap -H  10.11.1.111 -R <sharename>
-echo exit | smbclient -L \\\\10.11.1.111
-smbclient \\\\10.11.1.111\\<share>
-nmap --script smb-enum-shares -p139,445 -T4 -Pn 10.11.1.111
+smbmap -H  10.11.1.111 -u USER -p PASS 
 smbmap -H 10.10.10.30 -u Sandra -p Password1234! -d MEGACORP.LOCAL
+
+echo exit | smbclient -L \\\\10.11.1.111
+- List all drives on host
+
+smbclient \\\\10.11.1.111\\<share>
 smbclient -L \\\\10.10.10.30 -U Sandra%Password1234!
+
+nmap --script smb-enum-shares -p139,445 -T4 -Pn 10.11.1.111
+
 
 # Check null sessions
 rpcclient -U "" -N 10.11.1.111
