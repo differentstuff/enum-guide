@@ -6,7 +6,7 @@ A port of all ports Enumeration Guide.
 The original document can be found here:
 
 https://github.com/six2dez/OSCP-Human-Guide/blob/master/oscp_human_guide.md <br>
-or <br>
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#reverse-shell <br>
 https://github.com/beyondtheoryio/Enumeration-Guide 
 
 I liked the idea and made my own version out of it.
@@ -888,7 +888,7 @@ searchsploit -t Apache | grep -v '/dos/'
 ## Reverse Shells
 
 https://www.revshells.com = Shell generator <br>
-https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#reverse-shell <br>
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#reverse-shell<br>
 https://github.com/MrPineMan/Awesome-Reverse-Shell <br>
 
 ```bash
