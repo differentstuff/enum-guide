@@ -202,15 +202,27 @@ nmap -p 69 --script=tftp-enum.nse 10.11.1.111
 
 ## HTTP - 80
 
-check: webpage <br>
+check: webpage itself <br>
 check: burp <br>
-check: dirbuster/gobuster <br>
 check: ... <br>
 dirb, dirsearch, gobuster, ffuf, feroxbuster <br>
 
 ```
+nikto -h http://10.10.10.242 -output /home/user/Documents/Knife/nikto.htm
+
 wpscan -u 10.10.10.239 --enumerate u
 wpscan -u URL --wordlist /Path/to/file.txt --username USER
+
+wfuzz -c -W /usr/share/wfuzz/wordlist/dir/common.txt --hc 400,404,403 http://192.168.1.5/dvwa/FUZZ
+
+dirb http://10.10.10.242
+
+Gobuster dir -w /path/to/WORDLIST -d DOMAIN
+
+Metasploit:
+use auxiliary/scanner/http/dir_scanner
+
+./dirsearch.py –u http://192.18.1.5/dvwa -e php -f -x 400,403,404
 ```
 
 ## Kerberos - 88
