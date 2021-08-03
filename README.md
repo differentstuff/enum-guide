@@ -170,7 +170,8 @@ nmap --script ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-ba
 
 - If you have usernames test login with username:username
 - Vulnerable Versions: 7.2p1
-- scp in OpenSSH 8.3p1
+- no known CVE for 8.2p1 onwards
+- "scp" up to OpenSSH 8.3p1 (untested)
 
 ```
 nc 10.11.1.111 22
